@@ -718,6 +718,60 @@
         color: var(--ink3);
         font-size: 0.8rem;
       }
+
+      .foot-newsletter {
+        margin-bottom: 1.75rem;
+      }
+      .foot-newsletter form {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .foot-newsletter input[type="email"] {
+        flex: 1 1 220px;
+        max-width: 280px;
+        padding: 10px 16px;
+        border: 2px solid var(--border2);
+        border-radius: 50px;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Nunito", sans-serif;
+        font-size: 0.9rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .foot-newsletter input[type="email"]:focus {
+        border-color: var(--pink);
+      }
+      .foot-newsletter button {
+        padding: 10px 22px;
+        background: var(--pink);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-family: "Nunito", sans-serif;
+        font-weight: 800;
+        font-size: 0.9rem;
+        cursor: pointer;
+        box-shadow: 0 4px 0 rgba(0, 0, 0, 0.13);
+        transition: background 0.2s, transform 0.1s;
+      }
+      .foot-newsletter button:hover {
+        background: #d62e62;
+        transform: translateY(-1px);
+      }
+      .foot-newsletter-ok {
+        font-size: 0.9rem;
+        color: var(--ink2);
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .foot-newsletter-note {
+        font-size: 0.78rem;
+        color: var(--ink3);
+      }
     </style>
   </head>
   <body>
@@ -1126,9 +1180,29 @@
           </a>
         </li>
       </ul>
+      <div class="foot-newsletter">
+        <form id="bd-form-footer" data-bd-ok="bd-ok-footer"
+              action="https://buttondown.com/api/emails/embed-subscribe/zoocrew" method="post">
+          <input type="hidden" name="tag" value="zoocrew-footer">
+          <input type="email" name="email" id="bd-email-footer" placeholder="your@email.com" required>
+          <button type="submit">Get launch updates</button>
+        </form>
+        <p class="foot-newsletter-ok" id="bd-ok-footer" style="display:none;">Check your email to confirm your subscription.</p>
+        <p class="foot-newsletter-note">Occasional emails when a new app ships. No spam.</p>
+      </div>
       <p class="foot-copy">
         © 2026 ZooCrew LLC · Colorado · Made with love and animal supervision 🐾
       </p>
     </footer>
+    <script>
+      document.querySelectorAll('form[data-bd-ok]').forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' }).catch(function() {});
+          form.style.display = 'none';
+          document.getElementById(form.dataset.bdOk).style.display = '';
+        });
+      });
+    </script>
   </body>
 </html>
