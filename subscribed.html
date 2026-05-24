@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You're in! — ZooCrew</title>
+    <link rel="icon" href="ZooCrew.png" />
+    <link rel="apple-touch-icon" href="ZooCrew.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --cream: #fdf6ec;
+        --cream2: #f7eddc;
+        --cream3: #eddfc8;
+        --ink: #2d2416;
+        --ink2: #5a4a35;
+        --ink3: #8a7a66;
+        --pink: #f0437a;
+        --orange: #f07c2a;
+        --border: rgba(90, 74, 53, 0.13);
+        --border2: rgba(90, 74, 53, 0.22);
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Nunito", sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        overflow-x: hidden;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* NAV */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3rem;
+        height: 68px;
+        background: rgba(253, 246, 236, 0.93);
+        backdrop-filter: blur(14px);
+        border-bottom: 2px solid var(--cream3);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-logo img {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+      }
+      .nav-wordmark {
+        font-family: "Fredoka One", cursive;
+        font-size: 1.5rem;
+        color: var(--orange);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        align-items: center;
+      }
+      @media (max-width: 768px) { .nav-links { display: none; } }
+      .nav-links a {
+        color: var(--ink2);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover { color: var(--ink); }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 2rem;
+        text-align: center;
+      }
+      .card {
+        max-width: 520px;
+      }
+      .paw {
+        font-size: 3rem;
+        margin-bottom: 1.25rem;
+        line-height: 1;
+      }
+      .card h1 {
+        font-family: "Fredoka One", cursive;
+        font-size: 3rem;
+        color: var(--ink);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+      }
+      .card p {
+        color: var(--ink2);
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+      .btn-primary {
+        display: inline-block;
+        background: var(--pink);
+        color: #fff;
+        text-decoration: none;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        box-shadow: 0 4px 0 rgba(0, 0, 0, 0.13);
+        transition: background 0.2s, transform 0.1s;
+      }
+      .btn-primary:hover {
+        background: #d62e62;
+        transform: translateY(-1px);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--cream2);
+        border-top: 2px solid var(--cream3);
+        padding: 2rem;
+        text-align: center;
+      }
+      .foot-copy {
+        color: var(--ink3);
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-logo">
+        <img src="ZooCrew.png" alt="ZooCrew paw logo" />
+        <span class="nav-wordmark">ZooCrew</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/#crew">The Crew</a></li>
+        <li><a href="/#about">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <div class="card">
+        <div class="paw">🐾</div>
+        <h1>You're in!</h1>
+        <p>
+          You'll hear from us when a new ZooCrew app ships. In the meantime,
+          check out what we're building.
+        </p>
+        <a href="https://zoocrew.llc" class="btn-primary">See what we're building →</a>
+      </div>
+    </div>
+
+    <footer>
+      <p class="foot-copy">
+        © 2026 ZooCrew LLC · Colorado · Made with love and animal supervision 🐾
+      </p>
+    </footer>
+  </body>
+</html>
