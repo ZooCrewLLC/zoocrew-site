@@ -1,0 +1,50 @@
+﻿name: Bug report
+description: Something on the site isn't behaving the way it should.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Which page (or which element on the page)?
+      placeholder: "https://spacehog.app/#download"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect to see instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the URL above
+        2. Click the "Download" button
+        3. ...
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser + version
+      placeholder: "Chrome 125 / Safari 17.5 / Firefox 126"
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: OS
+      placeholder: "Windows 11 / macOS 14.5 / iOS 17.5"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Anything else?
+      description: Screenshots, dev-tools console errors, etc.
