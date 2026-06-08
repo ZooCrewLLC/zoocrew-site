@@ -1,0 +1,24 @@
+﻿name: Feature request
+description: Suggest a change or addition to the site.
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's the problem this would solve?
+      description: What are you trying to find / do on the site that's harder than it should be?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed change
+      description: What should the site do? Mock-ups, wording suggestions, and rough notes are all welcome.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Anything else?
+      description: References, screenshots from other sites, etc.
